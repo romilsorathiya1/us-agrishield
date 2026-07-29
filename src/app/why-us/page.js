@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import ScrollAnimations from "../components/ScrollAnimations";
 import Footer from "../components/Footer";
-import { categories, company, whyChooseUs } from "../data/siteContent";
+import { categories, company, products, whyChooseUs } from "../data/siteContent";
 
 export default function WhyUs() {
   return (
@@ -12,10 +12,10 @@ export default function WhyUs() {
       <ScrollAnimations />
 
       <section className="whyus-hero">
-        <div className="whyus-hero-bg">
+          <div className="whyus-hero-bg">
           <Image
-            src="/hero-bg.png"
-            alt="About US AgriShield"
+            src="/hero-bg.jpeg"
+            alt="About US Agrishield"
             fill
             priority
             className="whyus-hero-image"
@@ -25,7 +25,6 @@ export default function WhyUs() {
         <div className="whyus-hero-pattern" />
 
         <div className="whyus-hero-content">
-          <div className="whyus-hero-badge">About Us</div>
           <h1 className="whyus-hero-title">
             {company.name} <br />
             <span className="whyus-hero-accent">Agriculture Products</span>
@@ -33,7 +32,7 @@ export default function WhyUs() {
           <p className="whyus-hero-description">
             {company.name} is an agriculture product business based in
             Ahmedabad, Gujarat. We provide focused crop care products across
-            insecticides, fungicides, and plant growth regulator categories.
+            fungicides, insecticides, herbicides, and PGR categories.
           </p>
         </div>
       </section>
@@ -51,9 +50,9 @@ export default function WhyUs() {
 
               <div className="about-story">
                 <p>
-                  Our product range includes insecticide, fungicide, and PGR
-                  solutions such as US Hunter, US Blaster, US Master, and US
-                  Defender. Product-specific dosage, pack size, and crop-wise
+                  Our product range includes insecticide, fungicide, herbicide,
+                  and PGR solutions such as US Hunter, US Blaster, US Master,
+                  US Sprayer, and US Defender. Product-specific dosage, pack size,
                   recommendation can be confirmed through our team.
                 </p>
                 <p>
@@ -92,33 +91,6 @@ export default function WhyUs() {
                   Ahmedabad <br /> Gujarat
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="impact-strip">
-        <div className="container">
-          <div className="impact-grid">
-            <div className="impact-item scroll-animate">
-              <div className="impact-number">4</div>
-              <div className="impact-label">Products</div>
-              <div className="impact-desc">US Hunter, US Blaster, US Master, US Defender</div>
-            </div>
-            <div className="impact-item scroll-animate">
-              <div className="impact-number">3</div>
-              <div className="impact-label">Categories</div>
-              <div className="impact-desc">Insecticide, Fungicide, PGR</div>
-            </div>
-            <div className="impact-item scroll-animate">
-              <div className="impact-number">+91</div>
-              <div className="impact-label">Phone</div>
-              <div className="impact-desc">{company.phoneDisplay}</div>
-            </div>
-            <div className="impact-item scroll-animate">
-              <div className="impact-number">@</div>
-              <div className="impact-label">Email</div>
-              <div className="impact-desc">{company.email}</div>
             </div>
           </div>
         </div>

@@ -1,11 +1,11 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "US AgriShield | Agriculture Product Solutions",
+  title: "US Agrishield | Agriculture Product Solutions",
   description:
-    "US AgriShield supplies agriculture product solutions including insecticides, fungicides, and PGR products from Ahmedabad, Gujarat.",
+    "US Agrishield supplies agriculture product solutions including insecticides, fungicides, and PGR products from Ahmedabad, Gujarat.",
   keywords: [
-    "US AgriShield",
+    "US Agrishield",
     "agriculture products",
     "insecticide",
     "fungicide",

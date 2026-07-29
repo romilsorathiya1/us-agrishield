@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { categories, company } from "../data/siteContent";
 
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="footer-logo">
-              <div className="footer-logo-icon">US</div>
+              <Image src="/USAGRISHIELD.png" alt="US Agrishield" className="footer-logo-icon" width={40} height={40} />
               <span className="footer-logo-text">{company.name}</span>
             </div>
             <p>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import ScrollAnimations from "./ScrollAnimations";
@@ -18,7 +19,13 @@ export default function ProductDetailPage({ categorySlug }) {
         <div className="pd-hero-overlay" />
         <div className="pd-hero-content">
           <Link href="/products" className="pd-hero-back">← All Products</Link>
-          <div className="pd-hero-icon">{category.icon}</div>
+          <div className="pd-hero-icon">
+            {category.image ? (
+              <Image src={category.image} alt={category.name} width={64} height={64} style={{ borderRadius: "8px" }} />
+            ) : (
+              category.icon
+            )}
+          </div>
           <h1 className="pd-hero-title">{category.name}</h1>
           <p className="pd-hero-subtitle">{category.tagline}</p>
           <p className="pd-hero-desc">{category.description}</p>
@@ -57,7 +64,11 @@ export default function ProductDetailPage({ categorySlug }) {
             </div>
             <div className="pd-overview-image scroll-animate">
               <div className="pd-overview-image-placeholder">
-                <span>{category.icon}</span>
+                {category.image ? (
+                  <Image src={category.image} alt={category.name} width={220} height={140} style={{ objectFit: "cover", borderRadius: "8px" }} />
+                ) : (
+                  <span>{category.icon}</span>
+                )}
               </div>
             </div>
           </div>

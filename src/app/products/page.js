@@ -12,10 +12,10 @@ export default function Products() {
       <ScrollAnimations />
 
       <section className="prod-hero">
-        <div className="prod-hero-bg">
+          <div className="prod-hero-bg">
           <Image
             src="/products-showcase.png"
-            alt="US AgriShield products"
+            alt="US Agrishield products"
             fill
             priority
             className="prod-hero-image"
@@ -31,7 +31,7 @@ export default function Products() {
           </h1>
           <p className="prod-hero-description">
             Explore {company.name} products across Insecticides, Fungicides,
-            and PGR. Open a category, read the details, and enquire directly.
+            Herbicides, and PGR. Open a category, read the details, and enquire directly.
           </p>
         </div>
       </section>
@@ -54,7 +54,13 @@ export default function Products() {
                 className="prod-cat-card scroll-animate"
               >
                 <div className="prod-cat-card-bg" />
-                <div className="prod-cat-icon">{category.icon}</div>
+                <div className="prod-cat-icon">
+                  {category.image ? (
+                    <Image src={category.image} alt={category.name} width={56} height={56} style={{ objectFit: "cover", borderRadius: "8px" }} />
+                  ) : (
+                    category.icon
+                  )}
+                </div>
                 <h3>{category.name}</h3>
                 <p className="prod-cat-tagline">{category.tagline}</p>
                 <p className="prod-cat-desc">{category.description}</p>
@@ -82,7 +88,7 @@ export default function Products() {
               <div className="prod-stat-label">Listed Products</div>
             </div>
             <div className="prod-stat-item scroll-animate">
-              <div className="prod-stat-number">3</div>
+              <div className="prod-stat-number">{categories.length}</div>
               <div className="prod-stat-label">Product Categories</div>
             </div>
             <div className="prod-stat-item scroll-animate">

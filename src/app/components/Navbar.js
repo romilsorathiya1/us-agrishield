@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { company, categories } from '../data/siteContent';
 
@@ -57,16 +58,16 @@ export default function Navbar() {
       <nav className={`navbar${scrolled ? ' scrolled' : ''}${!isHome ? ' navbar-inner' : ''}${menuOpen ? ' menu-open' : ''}`} id="navbar">
         <div className="container">
           <Link href="/" className="navbar-brand" onClick={closeMenu}>
-            <div className="navbar-logo">US</div>
+            <Image src="/USAGRISHIELD.png" alt="US Agrishield" className="navbar-logo" width={44} height={44} priority />
             <div className="navbar-brand-text">
               <span className="navbar-brand-name">{company.name}</span>
-              <span className="navbar-brand-tagline">Agriculture Product Solutions</span>
+              <span className="navbar-brand-tagline">ખેડૂતનો વિશ્વાસ, પાકનો વિકાસ</span>
             </div>
           </Link>
 
           <div className={`navbar-links${menuOpen ? ' open' : ''}`}>
             <div className="sidebar-header">
-              <div className="navbar-logo">US</div>
+              <Image src="/USAGRISHIELD.png" alt="US Agrishield" className="navbar-logo" width={40} height={40} />
               <div className="sidebar-brand-text">
                 <span className="sidebar-brand-name">{company.name}</span>
                 <span className="sidebar-tagline">Agriculture Product Solutions</span>
