@@ -48,9 +48,9 @@ export default function Home() {
                 Explore Products
                 <span>→</span>
               </Link>
-              <a href="/Catalogue.pdf" className="btn-secondary" download target="_blank" rel="noopener noreferrer">
+              {/* <a href="/Catalogue.pdf" className="btn-secondary" download target="_blank" rel="noopener noreferrer">
                 Catalogue
-              </a>
+              </a> */}
               <a href={`tel:+91${company.phone}`} className="btn-secondary">
                 Call Now
               </a>

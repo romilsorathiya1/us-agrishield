@@ -77,7 +77,7 @@ export default function Navbar() {
             <Link href="/" className={`navbar-link${pathname === '/' ? ' active' : ''}`} onClick={closeMenu}>
               Home
             </Link>
-            <Link href="/why-us" className={`navbar-link${pathname === '/why-us' ? ' active' : ''}`} onClick={closeMenu}>
+            <Link href="/About-us" className={`navbar-link${pathname === '/About-us' ? ' active' : ''}`} onClick={closeMenu}>
               About Us
             </Link>
 

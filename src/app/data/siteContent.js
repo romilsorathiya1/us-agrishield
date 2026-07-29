@@ -15,7 +15,7 @@ export const categories = [
     name: "Fungicides",
     tagline: "Disease management for healthier crops",
     description:
-    "Dependable fungicide products for crop disease control, cleaner foliage, and improved crop confidence through the season.",
+    "Advanced fungicide solutions that protect crops from diseases and promote healthier plant growth.",
     image: "/Fungicides.jpeg",
     products: ["US Master"],
   },
@@ -25,7 +25,7 @@ export const categories = [
     name: "Insecticides",
     tagline: "Targeted protection from damaging pests",
     description:
-      "Quality insecticide solutions designed to protect crops from pest pressure and support healthier field performance.",
+      "Effective insecticide solutions that protect crops from harmful insects and improve crop productivity.",
     image: "/Insecticides.jpeg",
     products: ["US Hunter", "US Blaster"],
   },
@@ -35,7 +35,7 @@ export const categories = [
     name: "Herbicides",
     tagline: "Weed control for cleaner crop stands",
     description:
-      "Effective herbicide solutions to manage weeds, protect crop establishment, and support uniform growth.",
+      "Advanced weed control solutions for cleaner fields and better crop performance.",
     image: "/Herbicides.jpeg",
     products: ["US Sprayer"],
   },
@@ -45,7 +45,7 @@ export const categories = [
     name: "PGR",
     tagline: "Plant growth regulator solutions",
     description:
-      "Plant growth regulator products built to support balanced growth, crop vigor, and better farm outcomes.",
+      " Advanced plant growth regulators that support healthier growth, improved flowering, and higher yields.",
     image: "/PGR.jpeg",
     products: ["US Defender"],
   },
@@ -135,9 +135,13 @@ export const products = [
 ];
 
 export const whyChooseUs = [
-  "Focused agriculture product range",
-  "Practical guidance for product selection",
-  "Ahmedabad based company support",
-  "Simple enquiry by phone, email or contact form",
+  {"heading":"Premium Quality",
+    "description":"High-quality products developed to deliver reliable performance and consistent crop protection."},
+  {"heading":"Fast Technical Support",
+    "description":"Quick and reliable technical assistance for product selection, dosage, and application."},
+  {"heading":"Gujarat Based",
+  "description":"Operating from Gujarat to deliver reliable agrochemical solutions across India."},
+  {"heading":"Farmer Focused",
+  "description":"Dedicated to helping farmers achieve healthier crops, higher yields, and better profitability."}
 ];
 

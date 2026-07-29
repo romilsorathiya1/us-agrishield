@@ -3,7 +3,8 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import ScrollAnimations from "../components/ScrollAnimations";
 import Footer from "../components/Footer";
-import { categories, company, products } from "../data/siteContent";
+import ProductSlider from "../components/ProductSlider";
+import { categories, company } from "../data/siteContent";
 
 export default function Products() {
   return (
@@ -24,9 +25,9 @@ export default function Products() {
         <div className="prod-hero-overlay" />
         <div className="prod-hero-pattern" />
         <div className="prod-hero-content">
-          <div className="prod-hero-badge">Our Products</div>
+          
           <h1 className="prod-hero-title">
-            Agriculture Product <br />
+            Agrochemical Product <br />
             <span className="prod-hero-accent">Range</span>
           </h1>
           <p className="prod-hero-description">
@@ -40,7 +41,7 @@ export default function Products() {
         <div className="container">
           <div className="prod-categories-header scroll-animate">
             <div className="section-label">Product Categories</div>
-            <h2 className="section-title">Choose a Product Family</h2>
+            <h2 className="section-title">Choose a Product Category</h2>
             <p className="section-subtitle">
               A simple product structure for quick browsing and enquiry.
             </p>
@@ -80,47 +81,16 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="prod-stats">
-        <div className="container">
-          <div className="prod-stats-grid">
-            <div className="prod-stat-item scroll-animate">
-              <div className="prod-stat-number">4</div>
-              <div className="prod-stat-label">Listed Products</div>
-            </div>
-            <div className="prod-stat-item scroll-animate">
-              <div className="prod-stat-number">{categories.length}</div>
-              <div className="prod-stat-label">Product Categories</div>
-            </div>
-            <div className="prod-stat-item scroll-animate">
-              <div className="prod-stat-number">+91</div>
-              <div className="prod-stat-label">Phone Enquiry</div>
-            </div>
-            <div className="prod-stat-item scroll-animate">
-              <div className="prod-stat-number">GJ</div>
-              <div className="prod-stat-label">Ahmedabad Office</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="prod-why">
         <div className="container">
           <div className="prod-why-header scroll-animate">
             <div className="section-label">Featured Products</div>
             <h2 className="section-title">Product Details at a Glance</h2>
             <p className="section-subtitle">
-              Enquire for final dosage, price, and available pack size before use.
+              Enquire for the final price, available pack size and dosage before use.
             </p>
           </div>
-          <div className="prod-why-grid">
-            {products.map((product) => (
-              <div key={product.name} className="prod-why-card scroll-animate">
-                <div className="prod-why-icon">{product.category.slice(0, 2).toUpperCase()}</div>
-                <h3>{product.name}</h3>
-                <p>{product.category} - {product.composition}</p>
-              </div>
-            ))}
-          </div>
+          <ProductSlider />
         </div>
       </section>
 

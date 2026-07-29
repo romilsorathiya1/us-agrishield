@@ -27,12 +27,10 @@ export default function WhyUs() {
         <div className="whyus-hero-content">
           <h1 className="whyus-hero-title">
             {company.name} <br />
-            <span className="whyus-hero-accent">Agriculture Products</span>
+            <span className="whyus-hero-accent">Your Trusted Crop Care Partner</span>
           </h1>
           <p className="whyus-hero-description">
-            {company.name} is an agriculture product business based in
-            Ahmedabad, Gujarat. We provide focused crop care products across
-            fungicides, insecticides, herbicides, and PGR categories.
+          {company.name} is an Ahmedabad-based agrochemical company committed to providing high-quality crop protection solutions, including fungicides, insecticides, herbicides, and plant growth regulators (PGRs).
           </p>
         </div>
       </section>
@@ -42,36 +40,20 @@ export default function WhyUs() {
           <div className="about-grid">
             <div className="about-content scroll-animate">
               <div className="section-label">Company Details</div>
-              <h2 className="section-title">Crop Care Products with Simple Support</h2>
+              <h2 className="section-title"> Leading the Future of Crop Protection</h2>
               <p className="section-subtitle">
-                We keep our product information and enquiry process direct so
-                farmers, dealers, and partners can get the details they need.
-              </p>
+                US Agrishield is an Ahmedabad-based agrochemical company dedicated to delivering high-quality crop protection solutions. We focus on helping farmers improve crop health, productivity, and sustainable agricultural growth.</p>
 
               <div className="about-story">
                 <p>
-                  Our product range includes insecticide, fungicide, herbicide,
-                  and PGR solutions such as US Hunter, US Blaster, US Master,
-                  US Sprayer, and US Defender. Product-specific dosage, pack size,
-                  recommendation can be confirmed through our team.
+                  Our product portfolio includes fungicides, insecticides, herbicides, and plant growth regulators (PGRs). Every product is developed with a commitment to quality, reliability, and field performance.
                 </p>
                 <p>
-                  Visit or contact us at our Ahmedabad office for product
-                  enquiry, dealership discussion, and business communication.
+                  We believe in building long-term relationships with farmers, dealers, and distributors by providing trusted products, professional support, and value-driven agricultural solutions across India.
                 </p>
               </div>
 
-              <div className="about-mission-box">
-                <div className="about-mission-icon">US</div>
-                <div>
-                  <h4>Our Purpose</h4>
-                  <p>
-                    To supply reliable agriculture products and practical
-                    guidance that help farmers protect crops and improve crop
-                    performance.
-                  </p>
-                </div>
-              </div>
+              
             </div>
 
             <div className="about-visual scroll-animate">
@@ -99,11 +81,10 @@ export default function WhyUs() {
       <section className="values-section">
         <div className="container">
           <div className="values-header scroll-animate">
-            <div className="section-label">Our Values</div>
-            <h2 className="section-title">What Drives Us Every Day</h2>
+            <div className="section-label">Our STRENGTHS</div>
+            <h2 className="section-title">Why Farmers Trust US Agrishield</h2>
             <p className="section-subtitle">
-              Practical agriculture support, clear product information, and
-              dependable communication.
+              Combining premium quality, fast support, and farmer-focused solutions for better agriculture.
             </p>
           </div>
 
@@ -112,12 +93,9 @@ export default function WhyUs() {
               <div key={value} className="value-card scroll-animate">
                 <div className="value-card-top">
                   <div className="value-icon">{String(index + 1).padStart(2, "0")}</div>
-                  <h3>{value}</h3>
+                  <h3>{value.heading}</h3>
                 </div>
-                <p>
-                  We focus on making product selection and enquiry easy for
-                  farmers, dealers, and agriculture partners.
-                </p>
+                <p>{value.description}</p>
               </div>
             ))}
           </div>
@@ -127,11 +105,10 @@ export default function WhyUs() {
       <section className="advantages-section">
         <div className="container">
           <div className="advantages-header scroll-animate">
-            <div className="section-label">Product Focus</div>
+            <div className="section-label">Our Crop Care Product Range</div>
             <h2 className="section-title">The {company.name} Range</h2>
             <p className="section-subtitle">
-              The website now follows the simple product structure from your
-              content plan.
+              Explore our range of fungicides, insecticides, herbicides, and plant growth regulators (PGRs), developed to support healthier crops and better yields.
             </p>
           </div>
 
@@ -152,8 +129,7 @@ export default function WhyUs() {
       <section className="whyus-cta">
         <div className="whyus-cta-bg-pattern" />
         <div className="whyus-cta-content">
-          <h2>Ready to Contact {company.name}?</h2>
-          <p>{company.address}</p>
+          <h2>Ready to Contact <br/> {company.name}?</h2>
           <div className="whyus-cta-actions">
             <Link href="/contact" className="btn-primary btn-primary-light">
               Get in Touch
