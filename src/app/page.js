@@ -123,12 +123,10 @@ export default function Home() {
         <div className="container">
           <div className="why-us-grid">
             {whyChooseUs.map((item, index) => (
-              <div key={item} className="why-us-card scroll-animate">
+              <div key={index} className="why-us-card scroll-animate">
                 <div className="why-us-icon">{String(index + 1).padStart(2, "0")}</div>
-                <h3>{item}</h3>
-                <p>
-                  {whyChoseBottomLine[index]}
-                </p>
+                <h3>{item.heading}</h3>
+                <p>{item.description}</p>
               </div>
             ))}
           </div>

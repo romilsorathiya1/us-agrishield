@@ -90,7 +90,7 @@ export default function WhyUs() {
 
           <div className="values-grid">
             {whyChooseUs.map((value, index) => (
-              <div key={value} className="value-card scroll-animate">
+              <div key={index} className="value-card scroll-animate">
                 <div className="value-card-top">
                   <div className="value-icon">{String(index + 1).padStart(2, "0")}</div>
                   <h3>{value.heading}</h3>
