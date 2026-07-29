@@ -1,5 +1,5 @@
-import ProductDetailPage from "../../components/ProductDetailPage";
+import { redirect } from "next/navigation";
 
-export default function FungicidesPage() {
-  return <ProductDetailPage categorySlug="soil-enhancers" />;
+export default function SoilEnhancersPage() {
+  redirect("/products/fungicides");
 }

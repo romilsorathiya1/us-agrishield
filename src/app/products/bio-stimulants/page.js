@@ -1,5 +1,5 @@
-import ProductDetailPage from "../../components/ProductDetailPage";
+import { redirect } from "next/navigation";
 
-export default function PgrPage() {
-  return <ProductDetailPage categorySlug="bio-stimulants" />;
+export default function BioStimulantsPage() {
+  redirect("/products/pgr");
 }

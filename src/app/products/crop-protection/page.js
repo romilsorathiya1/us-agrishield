@@ -1,5 +1,5 @@
-import ProductDetailPage from "../../components/ProductDetailPage";
+import { redirect } from "next/navigation";
 
-export default function InsecticidesPage() {
-  return <ProductDetailPage categorySlug="crop-protection" />;
+export default function CropProtectionPage() {
+  redirect("/products/insecticides");
 }

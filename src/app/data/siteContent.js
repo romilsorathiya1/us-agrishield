@@ -10,24 +10,24 @@ export const company = {
 
 export const categories = [
   {
-    slug: "soil-enhancers",
+    slug: "fungicides",
     icon: "FU",
     name: "Fungicides",
     tagline: "Disease management for healthier crops",
     description:
-    "Advanced fungicide solutions that protect crops from diseases and promote healthier plant growth.",
+      "Advanced fungicide solutions that protect crops from diseases and promote healthier plant growth.",
     image: "/Fungicides.jpeg",
-    products: ["US Master"],
+    products: ["US Defender", "US Champion", "US Champion Plus"],
   },
   {
-    slug: "crop-protection",
+    slug: "insecticides",
     icon: "IN",
     name: "Insecticides",
     tagline: "Targeted protection from damaging pests",
     description:
       "Effective insecticide solutions that protect crops from harmful insects and improve crop productivity.",
     image: "/Insecticides.jpeg",
-    products: ["US Hunter", "US Blaster"],
+    products: ["US Sniper", "US Marshal", "US Fighter"],
   },
   {
     slug: "herbicides",
@@ -37,99 +37,170 @@ export const categories = [
     description:
       "Advanced weed control solutions for cleaner fields and better crop performance.",
     image: "/Herbicides.jpeg",
-    products: ["US Sprayer"],
+    products: ["US Titan"],
   },
   {
-    slug: "bio-stimulants",
+    slug: "pgr",
     icon: "PGR",
     name: "PGR",
     tagline: "Plant growth regulator solutions",
     description:
-      " Advanced plant growth regulators that support healthier growth, improved flowering, and higher yields.",
+      "Advanced plant growth regulators that support healthier growth, improved flowering, and higher yields.",
     image: "/PGR.jpeg",
-    products: ["US Defender"],
+    products: ["US Booster", "US Power Plus"],
   },
 ];
 
 export const products = [
+  // Fungicides
   {
-    slug: "crop-protection",
-    name: "US Hunter",
-    category: "Insecticide",
-    composition: "Spinosad 45% SC",
-    dosage: "Use as recommended by the crop advisor for the target crop and pest condition.",
-    pack: "Available pack sizes on request",
-    summary:
-      "US Hunter is an insecticide product from US Agrishield for effective pest management in crop fields.",
-    benefits: [
-      "Helps manage harmful insect pressure",
-      "Supports healthier crop growth",
-      "Suitable for professional farm use",
-      "Guidance available from the US Agrishield team",
-    ],
-  },
-  {
-    slug: "crop-protection",
-    name: "US Blaster",
-    category: "Insecticide",
-    composition: "Product details available on request",
-    dosage: "Use as recommended by the crop advisor for the target crop and pest condition.",
-    pack: "Available pack sizes on request",
-    summary:
-      "US Blaster is an insecticide solution for farmers looking for dependable crop protection support.",
-    benefits: [
-      "Designed for pest protection programs",
-      "Useful across planned spray schedules",
-      "Supports better crop protection decisions",
-      "Enquiry support available by phone or WhatsApp",
-    ],
-  },
-  {
-    slug: "soil-enhancers",
-    name: "US Master",
+    slug: "fungicides",
+    name: "US Defender",
     category: "Fungicide",
-    composition: "Product details available on request",
-    dosage: "Use as recommended by the crop advisor for the target crop and disease condition.",
+    composition: "Tebuconazole 25.9% EC",
+    image: "/productPhotos/defender.png",
+    dosage: "Use as recommended by crop advisor for target crop and disease condition.",
     pack: "Available pack sizes on request",
     summary:
-      "US Master is a fungicide product for disease management and improved crop care.",
+      "Broad-spectrum systemic fungicide effective against rust, leaf spot, and powdery mildew for healthier crop yields.",
     benefits: [
-      "Helps protect crops from disease pressure",
-      "Supports cleaner and healthier plant growth",
-      "Fits into regular crop care programs",
-      "Technical guidance available from US Agrishield",
+      "Systemic action for preventive and curative control",
+      "Improves crop quality and yield",
+      "Fast absorption by plant tissue",
     ],
   },
+  {
+    slug: "fungicides",
+    name: "US Champion",
+    category: "Fungicide",
+    composition: "Azoxystrobin 11% + Tebuconazole 18.3% SC",
+    image: "/productPhotos/champion.png",
+    dosage: "Use as recommended by crop advisor for target crop and disease condition.",
+    pack: "Available pack sizes on request",
+    summary:
+      "Dual-action fungicide combining systemic and contact activity to provide broad-spectrum disease protection.",
+    benefits: [
+      "Dual mode of action prevents resistance",
+      "Longer duration of disease protection",
+      "Protects new plant growth effectively",
+    ],
+  },
+  {
+    slug: "fungicides",
+    name: "US Champion Plus",
+    category: "Fungicide",
+    composition: "Azoxystrobin 18.2% + Difenoconazole 11.4% SC",
+    image: "/productPhotos/championPlus.png",
+    dosage: "Use as recommended by crop advisor for target crop and disease condition.",
+    pack: "Available pack sizes on request",
+    summary:
+      "Advanced fungicide formulation for superior control of stubborn fungal infections and leaf blight.",
+    benefits: [
+      "High rainfastness and systemic activity",
+      "Broad-spectrum control across multiple crop types",
+      "Enhances greening effect and crop vigor",
+    ],
+  },
+
+  // Insecticides
+  {
+    slug: "insecticides",
+    name: "US Sniper",
+    category: "Insecticide",
+    composition: "Abamectin 1.9% EC",
+    image: "/productPhotos/sniper.png",
+    dosage: "Use as recommended by crop advisor for target crop and pest condition.",
+    pack: "Available pack sizes on request",
+    summary:
+      "High-potency insecticide and miticide for targeted control of mites, leaf miners, and chewing insects.",
+    benefits: [
+      "Translaminar movement for hidden pest control",
+      "Effective against resistant mite populations",
+      "Rapid knockdown action",
+    ],
+  },
+  {
+    slug: "insecticides",
+    name: "US Marshal",
+    category: "Insecticide",
+    composition: "Emamectin Benzoate 1.9% EC",
+    image: "/productPhotos/marshal.png",
+    dosage: "Use as recommended by crop advisor for target crop and pest condition.",
+    pack: "Available pack sizes on request",
+    summary:
+      "Modern biological-derived insecticide for quick paralysis and control of bollworms and caterpillars.",
+    benefits: [
+      "Strong stomach and contact action",
+      "Low application dosage requirement",
+      "Safe for beneficial insects when used as directed",
+    ],
+  },
+  {
+    slug: "insecticides",
+    name: "US Fighter",
+    category: "Insecticide",
+    composition: "Profenofos 40% + Cypermethrin 4% EC",
+    image: "/productPhotos/fighter.png",
+    dosage: "Use as recommended by crop advisor for target crop and pest condition.",
+    pack: "Available pack sizes on request",
+    summary:
+      "Combination insecticide offering strong contact, stomach, and ovicidal action against complex pest attacks.",
+    benefits: [
+      "Synergistic combination for quick knockdown",
+      "Effective on egg, larval, and adult pest stages",
+      "Solves tough pest pressure in cotton and vegetables",
+    ],
+  },
+
+  // PGR
+  {
+    slug: "pgr",
+    name: "US Booster",
+    category: "PGR",
+    composition: "Paclobutrazol 40% SC",
+    image: "/productPhotos/booster.png",
+    dosage: "Use as recommended by crop advisor for target crop stage.",
+    pack: "Available pack sizes on request",
+    summary:
+      "Effective plant growth regulator that controls vegetative growth and promotes profuse flowering and fruit setting.",
+    benefits: [
+      "Promotes balanced crop canopy and flowering",
+      "Increases fruit size, color, and uniformity",
+      "Improves tolerance against environmental stress",
+    ],
+  },
+  {
+    slug: "pgr",
+    name: "US Power Plus",
+    category: "PGR",
+    composition: "Gibberellic Acid (GA3)",
+    image: "/productPhotos/powerPlus.png",
+    dosage: "Use as recommended by crop advisor for target crop stage.",
+    pack: "Available pack sizes on request",
+    summary:
+      "Plant growth stimulant that promotes cell elongation, uniform growth, bigger fruit development, and higher yield.",
+    benefits: [
+      "Enhances cell division and plant vigor",
+      "Improves crop yield and quality metrics",
+      "Breaks seed dormancy and stimulates early growth",
+    ],
+  },
+
+  // Herbicides
   {
     slug: "herbicides",
-    name: "US Sprayer",
+    name: "US Titan",
     category: "Herbicide",
-    composition: "Product details available on request",
-    dosage: "Use as recommended by the crop advisor for the weed type and crop stage.",
+    composition: "Quizalofop Ethyl 7.5% + Imazethapyr 15% EC",
+    image: "/productPhotos/titan.png",
+    dosage: "Use as recommended by crop advisor for weed type and crop stage.",
     pack: "Available pack sizes on request",
     summary:
-      "US Sprayer is a herbicide product for effective weed management and cleaner crop stands.",
+      "Selective post-emergence herbicide providing broad-spectrum control of narrow and broadleaf weeds.",
     benefits: [
-      "Controls broadleaf and grassy weeds",
-      "Helps maintain cleaner crop stands",
-      "Supports better crop establishment",
-      "Enquiry support available from US Agrishield",
-    ],
-  },
-  {
-    slug: "bio-stimulants",
-    name: "US Defender",
-    category: "PGR",
-    composition: "Product details available on request",
-    dosage: "Use as recommended by the crop advisor for the target crop stage.",
-    pack: "Available pack sizes on request",
-    summary:
-      "US Defender is a plant growth regulator product focused on balanced growth and crop performance.",
-    benefits: [
-      "Supports balanced crop development",
-      "Useful during important crop growth stages",
-      "Helps improve crop management planning",
-      "Product support available from the company team",
+      "Dual herbicide action for complete weed control",
+      "Safe for major leguminous and oilseed crops",
+      "Prevents crop-weed competition early in the season",
     ],
   },
 ];

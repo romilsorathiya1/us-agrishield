@@ -47,20 +47,7 @@ export default function ProductDetailPage({ categorySlug }) {
                 For exact crop-wise recommendation, dosage, and availability,
                 connect with our team before application.
               </p>
-              <div className="pd-overview-highlights">
-                <div className="pd-overview-highlight">
-                  <span className="pd-highlight-num">{categoryProducts.length}</span>
-                  <span className="pd-highlight-label">Products</span>
-                </div>
-                <div className="pd-overview-highlight">
-                  <span className="pd-highlight-num">+91</span>
-                  <span className="pd-highlight-label">Call Support</span>
-                </div>
-                <div className="pd-overview-highlight">
-                  <span className="pd-highlight-num">IN</span>
-                  <span className="pd-highlight-label">India Supply</span>
-                </div>
-              </div>
+
             </div>
             <div className="pd-overview-image scroll-animate">
               <div className="pd-overview-image-placeholder">
@@ -88,35 +75,70 @@ export default function ProductDetailPage({ categorySlug }) {
           <div className="pd-variants-list">
             {categoryProducts.map((product) => (
               <div key={product.name} className="pd-variant-card scroll-animate">
-                <div className="pd-variant-top">
-                  <h3>{product.name}</h3>
-                  <span className="pd-variant-type">{product.category}</span>
-                </div>
-                <p>{product.summary}</p>
-                <div className="pd-variant-details">
-                  <div className="pd-variant-detail">
-                    <span className="pd-variant-detail-label">Composition</span>
-                    <span className="pd-variant-detail-value">{product.composition}</span>
+                <div className="pd-variant-card-body">
+                  {/* Left Column: Product Image */}
+                  <div className="pd-variant-image-col">
+                    <div className="pd-variant-image-wrapper">
+                      {product.image ? (
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          className="pd-variant-image"
+                          sizes="(max-width: 768px) 100vw, 350px"
+                        />
+                      ) : (
+                        <div className="pd-variant-no-img">{category.icon}</div>
+                      )}
+                    </div>
                   </div>
-                  <div className="pd-variant-detail">
-                    <span className="pd-variant-detail-label">Dosage</span>
-                    <span className="pd-variant-detail-value">{product.dosage}</span>
-                  </div>
-                  <div className="pd-variant-detail">
-                    <span className="pd-variant-detail-label">Pack Size</span>
-                    <span className="pd-variant-detail-value">{product.pack}</span>
+
+                  {/* Right Column: Name, Technical Formulation & Details */}
+                  <div className="pd-variant-info-col">
+                    <div className="pd-variant-header">
+                      <span className="pd-variant-type-badge">{product.category}</span>
+                      <h3 className="pd-variant-title">{product.name}</h3>
+                      <div className="pd-variant-tech-badge">
+                        <span className="pd-tech-label">Technical Formulation:</span> {product.composition}
+                      </div>
+                    </div>
+
+                    <p className="pd-variant-summary">{product.summary}</p>
+
+                    <div className="pd-variant-specs">
+                      <div className="pd-variant-spec-item">
+                        <span className="pd-spec-label">Dosage</span>
+                        <span className="pd-spec-val">{product.dosage}</span>
+                      </div>
+                      <div className="pd-variant-spec-item">
+                        <span className="pd-spec-label">Pack Size</span>
+                        <span className="pd-spec-val">{product.pack}</span>
+                      </div>
+                    </div>
+
+                    {product.benefits && product.benefits.length > 0 && (
+                      <div className="pd-variant-benefits-box">
+                        <span className="pd-benefits-heading">Key Benefits:</span>
+                        <ul className="pd-benefits-list">
+                          {product.benefits.map((benefit, bIdx) => (
+                            <li key={bIdx}>{benefit}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <div className="pd-variant-action">
+                      <a
+                        href={`https://wa.me/91${company.phone}?text=I%20want%20to%20enquire%20about%20${encodeURIComponent(product.name)}`}
+                        className="pd-variant-cta-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Enquire Now on WhatsApp →
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="pd-feature-card" style={{ marginTop: "1rem" }}>
-                  <h3>Key Benefits</h3>
-                  <p>{product.benefits.join(" • ")}</p>
-                </div>
-                <a
-                  href={`https://wa.me/91${company.phone}?text=I%20want%20to%20enquire%20about%20${encodeURIComponent(product.name)}`}
-                  className="pd-variant-cta"
-                >
-                  Inquire Now →
-                </a>
               </div>
             ))}
           </div>

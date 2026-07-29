@@ -1,17 +1,54 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 
 const sliderItems = [
-  { name: 'Booster', image: '/productPhotos/booster.png' },
-  { name: 'Champion Plus', image: '/productPhotos/championPlus.png' },
-  { name: 'Champion', image: '/productPhotos/champion.png' },
-  { name: 'Defender', image: '/productPhotos/defender.png' },
-  { name: 'Fighter', image: '/productPhotos/fighter.png' },
-  { name: 'Marshal', image: '/productPhotos/marshal.png' },
-  { name: 'Power Plus', image: '/productPhotos/powerPlus.png' },
-  { name: 'Sniper', image: '/productPhotos/sniper.png' },
+  {
+    name: 'US Defender',
+    technicalName: 'Tebuconazole 25.9% EC',
+    image: '/productPhotos/defender.png',
+  },
+  {
+    name: 'US Champion',
+    technicalName: 'Azoxystrobin 11% + Tebuconazole 18.3% SC',
+    image: '/productPhotos/champion.png',
+  },
+  {
+    name: 'US Champion Plus',
+    technicalName: 'Azoxystrobin 18.2% + Difenoconazole 11.4% SC',
+    image: '/productPhotos/championPlus.png',
+  },
+  {
+    name: 'US Sniper',
+    technicalName: 'Abamectin 1.9% EC',
+    image: '/productPhotos/sniper.png',
+  },
+  {
+    name: 'US Marshal',
+    technicalName: 'Emamectin Benzoate 1.9% EC',
+    image: '/productPhotos/marshal.png',
+  },
+  {
+    name: 'US Fighter',
+    technicalName: 'Profenofos 40% + Cypermethrin 4% EC',
+    image: '/productPhotos/fighter.png',
+  },
+  {
+    name: 'US Booster',
+    technicalName: 'Paclobutrazol 40% SC',
+    image: '/productPhotos/booster.png',
+  },
+  {
+    name: 'US Power Plus',
+    technicalName: 'Gibberellic Acid (GA3)',
+    image: '/productPhotos/powerPlus.png',
+  },
+  {
+    name: 'US Titan',
+    technicalName: 'Quizalofop Ethyl 7.5% + Imazethapyr 15% EC',
+    image: '/productPhotos/titan.png',
+  },
 ];
 
 export default function ProductSlider() {
@@ -20,16 +57,19 @@ export default function ProductSlider() {
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const dragStartX = useRef(0);
+
   const totalSlides = sliderItems.length;
   const slideWidth = 100 / slidesToShow;
-  const maxIndex = totalSlides - 1;
   const cloneCount = slidesToShow;
+
   const extendedSlides = [
     ...sliderItems.slice(-cloneCount),
     ...sliderItems,
     ...sliderItems.slice(0, cloneCount),
   ];
+
   const displayIndex = currentIndex + cloneCount;
 
   useEffect(() => {
@@ -46,30 +86,45 @@ export default function ProductSlider() {
     return () => window.removeEventListener('resize', updateSlides);
   }, []);
 
-  useEffect(() => {
-    if (currentIndex < 0 || currentIndex > maxIndex) {
-      const wrapTo = currentIndex < 0 ? maxIndex : 0;
-      const timer = window.setTimeout(() => {
-        setTransitionEnabled(false);
-        setCurrentIndex(wrapTo);
-      }, 300);
-      return () => window.clearTimeout(timer);
+  const handleNext = useCallback(() => {
+    if (!transitionEnabled) return;
+    setCurrentIndex((prev) => prev + 1);
+  }, [transitionEnabled]);
+
+  const handlePrev = useCallback(() => {
+    if (!transitionEnabled) return;
+    setCurrentIndex((prev) => prev - 1);
+  }, [transitionEnabled]);
+
+  const handleTransitionEnd = () => {
+    if (currentIndex >= totalSlides) {
+      setTransitionEnabled(false);
+      setCurrentIndex(currentIndex - totalSlides);
+    } else if (currentIndex < 0) {
+      setTransitionEnabled(false);
+      setCurrentIndex(currentIndex + totalSlides);
     }
-  }, [currentIndex, maxIndex]);
+  };
 
   useEffect(() => {
     if (!transitionEnabled) {
-      requestAnimationFrame(() => setTransitionEnabled(true));
+      const timer = requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTransitionEnabled(true);
+        });
+      });
+      return () => cancelAnimationFrame(timer);
     }
   }, [transitionEnabled]);
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
-      setCurrentIndex((current) => current >= maxIndex ? 0 : current + 1);
-    }, 4000);
+    if (isDragging || isHovered) return;
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3500);
 
-    return () => window.clearInterval(interval);
-  }, [maxIndex]);
+    return () => clearInterval(interval);
+  }, [handleNext, isDragging, isHovered]);
 
   const handlePointerDown = (event) => {
     dragStartX.current = event.clientX;
@@ -85,11 +140,11 @@ export default function ProductSlider() {
 
   const handlePointerUp = () => {
     if (!isDragging) return;
-    const threshold = 60;
+    const threshold = 50;
     if (dragOffset > threshold) {
-      setCurrentIndex((current) => current <= 0 ? maxIndex : current - 1);
+      handlePrev();
     } else if (dragOffset < -threshold) {
-      setCurrentIndex((current) => current >= maxIndex ? 0 : current + 1);
+      handleNext();
     }
     setIsDragging(false);
     setDragOffset(0);
@@ -99,11 +154,39 @@ export default function ProductSlider() {
 
   const trackStyle = {
     transform: transformValue,
-    transition: transitionEnabled ? 'transform 0.4s ease' : 'none',
+    transition: transitionEnabled ? 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)' : 'none',
   };
 
+  const activeDotIndex = ((currentIndex % totalSlides) + totalSlides) % totalSlides;
+
   return (
-    <div className="prod-slider scroll-animate">
+    <div
+      className="prod-slider scroll-animate"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <button
+        className="prod-slider-arrow prod-slider-arrow-left"
+        onClick={handlePrev}
+        aria-label="Previous Product"
+        type="button"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button
+        className="prod-slider-arrow prod-slider-arrow-right"
+        onClick={handleNext}
+        aria-label="Next Product"
+        type="button"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
       <div
         className={`prod-slider-window ${isDragging ? 'dragging' : ''}`}
         onPointerDown={handlePointerDown}
@@ -111,7 +194,11 @@ export default function ProductSlider() {
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
       >
-        <div className="prod-slider-track" style={trackStyle}>
+        <div
+          className="prod-slider-track"
+          style={trackStyle}
+          onTransitionEnd={handleTransitionEnd}
+        >
           {extendedSlides.map((item, index) => (
             <div key={`${item.name}-${index}`} className="prod-slide" style={{ width: `${slideWidth}%` }}>
               <div className="prod-slide-card">
@@ -126,11 +213,53 @@ export default function ProductSlider() {
                 </div>
                 <div className="prod-slide-info">
                   <h3 className="prod-slide-name">{item.name}</h3>
+                  <div className="prod-slide-tech-badge">
+                    {item.technicalName}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="prod-slider-controls">
+        <button
+          className="prod-slider-button"
+          onClick={handlePrev}
+          aria-label="Previous product"
+          type="button"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div className="prod-slider-dots">
+          {sliderItems.map((_, idx) => (
+            <button
+              key={idx}
+              className={`prod-slider-dot ${idx === activeDotIndex ? 'active' : ''}`}
+              onClick={() => {
+                if (!transitionEnabled) return;
+                setCurrentIndex(idx);
+              }}
+              aria-label={`Go to slide ${idx + 1}`}
+              type="button"
+            />
+          ))}
+        </div>
+
+        <button
+          className="prod-slider-button"
+          onClick={handleNext}
+          aria-label="Next product"
+          type="button"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
       </div>
     </div>
   );

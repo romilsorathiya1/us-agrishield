@@ -14,13 +14,13 @@ export default function Products() {
 
       <section className="prod-hero">
           <div className="prod-hero-bg">
-          <Image
+          {/* <Image
             src="/products-showcase.png"
             alt="US Agrishield products"
             fill
             priority
             className="prod-hero-image"
-          />
+          /> */}
         </div>
         <div className="prod-hero-overlay" />
         <div className="prod-hero-pattern" />
