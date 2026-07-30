@@ -3059,7 +3059,7 @@ button {
 .pd-overview-image-placeholder {
   position: relative;
   width: 100%;
-  min-height: 320px;
+  /* min-height: 320px; */
   aspect-ratio: 4/3;
   background: var(--bg-alt);
   border-radius: var(--radius-2xl);
