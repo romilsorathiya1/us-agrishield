@@ -17,6 +17,7 @@ export const categories = [
     description:
       "Advanced fungicide solutions that protect crops from diseases and promote healthier plant growth.",
     image: "/Fungicides.jpeg",
+    image2: "/Fungicides2.png",
     products: ["US Defender", "US Champion", "US Champion Plus"],
   },
   {
@@ -27,6 +28,7 @@ export const categories = [
     description:
       "Effective insecticide solutions that protect crops from harmful insects and improve crop productivity.",
     image: "/Insecticides.jpeg",
+    image2: "/Insecticides2.png",
     products: ["US Sniper", "US Marshal", "US Fighter"],
   },
   {
@@ -37,6 +39,7 @@ export const categories = [
     description:
       "Advanced weed control solutions for cleaner fields and better crop performance.",
     image: "/Herbicides.jpeg",
+    image2: "/Herbicides2.png",
     products: ["US Titan"],
   },
   {
@@ -47,6 +50,7 @@ export const categories = [
     description:
       "Advanced plant growth regulators that support healthier growth, improved flowering, and higher yields.",
     image: "/PGR.jpeg",
+    image2: "/PGR2.png",
     products: ["US Booster", "US Power Plus"],
   },
 ];

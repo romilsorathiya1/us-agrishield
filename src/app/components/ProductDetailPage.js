@@ -52,7 +52,13 @@ export default function ProductDetailPage({ categorySlug }) {
             <div className="pd-overview-image scroll-animate">
               <div className="pd-overview-image-placeholder">
                 {category.image ? (
-                  <Image src={category.image} alt={category.name} width={220} height={140} style={{ objectFit: "cover", borderRadius: "8px" }} />
+                  <Image
+                    src={category.image2}
+                    alt={category.name}
+                    fill
+                    className="pd-overview-image"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 ) : (
                   <span>{category.icon}</span>
                 )}
@@ -85,7 +91,7 @@ export default function ProductDetailPage({ categorySlug }) {
                           alt={product.name}
                           fill
                           className="pd-variant-image"
-                          sizes="(max-width: 768px) 100vw, 350px"
+                          // sizes="(max-width: 768px) 100vw, 350px"
                         />
                       ) : (
                         <div className="pd-variant-no-img">{category.icon}</div>
@@ -167,12 +173,12 @@ export default function ProductDetailPage({ categorySlug }) {
               </div>
             </div>
             <div className="pd-app-side scroll-animate">
-              <div className="pd-app-tip">
+              {/* <div className="pd-app-tip">
                 <div className="pd-app-tip-icon">US</div>
                 <h4>Call Now</h4>
                 <p>{company.phoneDisplay}</p>
                 <p>{company.email}</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

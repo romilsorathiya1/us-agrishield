@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request) {
   try {
-    const { name, email, phone, farm, subject, message } = await request.json();
+    const { name, email, phone, farm, subject, product, message } = await request.json();
 
     if (!name || !email || !message || !subject) {
       return Response.json(
@@ -21,7 +21,8 @@ export async function POST(request) {
       },
     });
 
-    const subjectLine = `Contact Enquiry: ${subject} from ${name}`;
+    const subjectLabel = product ? `${subject} - ${product}` : subject;
+    const subjectLine = `Contact Enquiry: ${subjectLabel} from ${name}`;
 
     const htmlContent = `
       <h2>New Contact Enquiry</h2>
@@ -31,6 +32,7 @@ export async function POST(request) {
         ${phone ? `<tr><td style="padding:8px 12px;font-weight:700;">Phone</td><td style="padding:8px 12px;">${phone}</td></tr>` : ''}
         ${farm ? `<tr><td style="padding:8px 12px;font-weight:700;">Farm / Company</td><td style="padding:8px 12px;">${farm}</td></tr>` : ''}
         <tr><td style="padding:8px 12px;font-weight:700;">Subject</td><td style="padding:8px 12px;">${subject}</td></tr>
+        ${product ? `<tr><td style="padding:8px 12px;font-weight:700;">Product</td><td style="padding:8px 12px;">${product}</td></tr>` : ''}
         <tr><td style="padding:8px 12px;font-weight:700;vertical-align:top;">Message</td><td style="padding:8px 12px;">${message.replace(/\n/g, '<br>')}</td></tr>
       </table>
     `;
