@@ -14,8 +14,22 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setMenuOpen(false);
+        setProductsExpanded(false);
+        document.body.style.overflow = '';
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+      document.body.style.overflow = '';
+    };
   }, []);
 
   const closeMenu = () => {
@@ -70,8 +84,14 @@ export default function Navbar() {
               <Image src="/USAGRISHIELD.png" alt="US Agrishield" className="navbar-logo" width={40} height={40} />
               <div className="sidebar-brand-text">
                 <span className="sidebar-brand-name">{company.name}</span>
-                <span className="sidebar-tagline">Agriculture Product Solutions</span>
+                <span className="sidebar-tagline">ખેડૂતનો વિશ્વાસ, પાકનો વિકાસ</span>
               </div>
+              <button className="sidebar-close-btn" onClick={closeMenu} aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </div>
 
             <Link href="/" className={`navbar-link${pathname === '/' ? ' active' : ''}`} onClick={closeMenu}>
