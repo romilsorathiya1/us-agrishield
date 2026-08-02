@@ -360,7 +360,16 @@ button {
   align-items: center;
   gap: 2.5rem;
   flex: 1;
-  justify-content: center;
+  justify-content: end;
+}
+
+/* Hide sidebar header on desktop */
+.sidebar-header {
+  display: none;
+}
+
+.sidebar-close-btn {
+  display: none;
 }
 
 /* Hide hamburger by default (desktop) */
@@ -4216,6 +4225,30 @@ button {
     background: #ffffff;
     position: relative;
     box-sizing: border-box;
+  }
+
+  .sidebar-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    color: #374151;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    padding: 4px;
+  }
+
+  .sidebar-close-btn:hover {
+    background: #f0fdf4;
+    color: #166534;
   }
 
   .sidebar-header .navbar-logo {
