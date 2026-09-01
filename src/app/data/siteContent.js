@@ -29,7 +29,7 @@ export const categories = [
       "Effective insecticide solutions that protect crops from harmful insects and improve crop productivity.",
     image: "/Insecticides.jpeg",
     image2: "/Insecticides2.png",
-    products: ["US Sniper", "US Marshal", "US Fighter"],
+    products: ["US Sniper", "US Marshal", "US Hanter", "US Fighter", "US Ravan", "US Guard"],
   },
   {
     slug: "herbicides",
@@ -51,7 +51,7 @@ export const categories = [
       "Advanced plant growth regulators that support healthier growth, improved flowering, and higher yields.",
     image: "/PGR.jpeg",
     image2: "/PGR2.png",
-    products: ["US Booster", "US Power Plus"],
+    products: ["US Booster", "US Power Plus", "US Extra Life", "US Silistic"],
   },
 ];
 
@@ -79,7 +79,7 @@ export const products = [
     category: "Fungicide",
     composition: "Azoxystrobin 11% + Tebuconazole 18.3% SC",
     image: "/productPhotos/champion.png",
-    dosage: "Use as recommended by crop advisor for target crop and disease condition.",
+    dosage: "280–350 ml per acre",
     pack: "Available pack sizes on request",
     summary:
       "Dual-action fungicide combining systemic and contact activity to provide broad-spectrum disease protection.",
@@ -94,8 +94,8 @@ export const products = [
     name: "US Champion Plus",
     category: "Fungicide",
     composition: "Azoxystrobin 18.2% + Difenoconazole 11.4% SC",
-    image: "/productPhotos/championPlus.png",
-    dosage: "Use as recommended by crop advisor for target crop and disease condition.",
+    image: "/productPhotos/azod.png",
+    dosage: "280–350 ml per acre",
     pack: "Available pack sizes on request",
     summary:
       "Advanced fungicide formulation for superior control of stubborn fungal infections and leaf blight.",
@@ -113,7 +113,7 @@ export const products = [
     category: "Insecticide",
     composition: "Abamectin 1.9% EC",
     image: "/productPhotos/sniper.png",
-    dosage: "Use as recommended by crop advisor for target crop and pest condition.",
+    dosage: "200–250 ml per acre",
     pack: "Available pack sizes on request",
     summary:
       "High-potency insecticide and miticide for targeted control of mites, leaf miners, and chewing insects.",
@@ -129,7 +129,7 @@ export const products = [
     category: "Insecticide",
     composition: "Emamectin Benzoate 1.9% EC",
     image: "/productPhotos/marshal.png",
-    dosage: "Use as recommended by crop advisor for target crop and pest condition.",
+    dosage: "200–250 ml per acre",
     pack: "Available pack sizes on request",
     summary:
       "Modern biological-derived insecticide for quick paralysis and control of bollworms and caterpillars.",
@@ -141,18 +141,66 @@ export const products = [
   },
   {
     slug: "insecticides",
-    name: "US Fighter",
+    name: "US Hanter",
     category: "Insecticide",
-    composition: "Profenofos 40% + Cypermethrin 4% EC",
-    image: "/productPhotos/fighter.png",
-    dosage: "Use as recommended by crop advisor for target crop and pest condition.",
+    composition: "Diafenthiuron 47% + Bifenthrin 9.4% SC",
+    image: "/productPhotos/hanter.png",
+    dosage: "280–350 ml per acre",
     pack: "Available pack sizes on request",
     summary:
-      "Combination insecticide offering strong contact, stomach, and ovicidal action against complex pest attacks.",
+      "Dual-action, broad-spectrum insecticide combination used to control stubborn sucking and chewing pests in crops like cotton and chilli.",
     benefits: [
-      "Synergistic combination for quick knockdown",
-      "Effective on egg, larval, and adult pest stages",
-      "Solves tough pest pressure in cotton and vegetables",
+      "Rapidly paralyzes pests on contact",
+      "Kills both sucking and chewing insects",
+      "Keeps crops safe for weeks",
+    ],
+  },
+  {
+    slug: "insecticides",
+    name: "US Fighter",
+    category: "Insecticide",
+    composition: "Azadirachtin 0.15% EC (1500 ppm)",
+    image: "/productPhotos/fighter.png",
+    dosage: "200–250 ml per acre",
+    pack: "Available pack sizes on request",
+    summary:
+      "Organic, neem seed-based botanical biopesticide used to protect plants from a wide range of harmful insects.",
+    benefits: [
+      "Disrupts pest lifecycles by stopping them from feeding and growing",
+      "Protects friendly insects like honeybees and ladybugs from harm",
+      "Leaves zero chemical residue, breaking down safely and naturally",
+    ],
+  },
+  {
+    slug: "insecticides",
+    name: "US Ravan",
+    category: "Insecticide",
+    composition: "Azadirachtin 1% EC (10,000 PPM)",
+    image: "/productPhotos/ravan.png",
+    dosage: "As recommended by crop advisor",
+    pack: "Available pack sizes on request",
+    summary:
+      "Concentrated, organic bio-insecticide derived from neem seed kernels used to control chewing and sucking pests in agriculture and gardening.",
+    benefits: [
+      "Stops insect reproduction, egg-laying, and molting cycles",
+      "Starves pests immediately by altering their taste receptors",
+      "Remains completely non-toxic to pollinators and beneficial predators",
+    ],
+  },
+  {
+    slug: "insecticides",
+    name: "US Guard",
+    category: "Insecticide / Miticide",
+    composition: "Flufenzine 20% EC",
+    image: "/productPhotos/gurds.png",
+    dosage: "As recommended by crop advisor",
+    pack: "Available pack sizes on request",
+    summary:
+      "Specialized miticide and acaricide used in agriculture to control various plant-eating mites on crops.",
+    benefits: [
+      "Kills mite eggs, nymphs, and adults",
+      "Acts as a growth regulator providing extended residual defense",
+      "Uses translaminar movement to eliminate pests feeding underneath leaves",
     ],
   },
 
@@ -187,6 +235,38 @@ export const products = [
       "Enhances cell division and plant vigor",
       "Improves crop yield and quality metrics",
       "Breaks seed dormancy and stimulates early growth",
+    ],
+  },
+  {
+    slug: "pgr",
+    name: "US Extra Life",
+    category: "PGR / Bio-stimulant",
+    composition: "Plant & Root Booster",
+    image: "/productPhotos/extraLife.png",
+    dosage: "As recommended by crop advisor",
+    pack: "Available pack sizes on request",
+    summary:
+      "A plant nutrition and growth booster bio-product for agricultural use that supports strong root development and healthier plant growth.",
+    benefits: [
+      "Supports strong root development",
+      "Promotes healthier plant growth",
+      "Helps improve overall plant vigor",
+    ],
+  },
+  {
+    slug: "pgr",
+    name: "US Silistic",
+    category: "Adjuvant",
+    composition: "Silicone-based Agricultural Adjuvant",
+    image: "/productPhotos/silistic.png",
+    dosage: "As recommended by crop advisor",
+    pack: "Available pack sizes on request",
+    summary:
+      "Specialized agricultural adjuvant that drastically lowers water surface tension, allowing pesticide and fertilizer sprays to form a thin, uniform film across plant leaves.",
+    benefits: [
+      "Maximises leaf coverage by instantly breaking water surface tension",
+      "Boosts chemical absorption through rapid, deep plant tissue penetration",
+      "Prevents rain wash-off by quickly binding sprays to leaves",
     ],
   },
 

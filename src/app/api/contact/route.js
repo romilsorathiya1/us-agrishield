@@ -12,12 +12,12 @@ export async function POST(request) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: Number(process.env.SMTP_PORT) || 587,
+      host:  'smtp.gmail.com',
+      port: 587,
       secure: false,
       auth: {
-        user: process.env.SMTP_EMAIL,
-        pass: process.env.SMTP_PASSWORD,
+        user: "usagrishield02@gmail.com",
+        pass: "iiyzdydzgelutiey",
       },
     });
 
@@ -38,8 +38,8 @@ export async function POST(request) {
     `;
 
     await transporter.sendMail({
-      from: `"Contact Form" <${process.env.SMTP_EMAIL}>`,
-      to: process.env.SMTP_EMAIL,
+      from: `"Contact Form" <usagrishield02@gmail.com>`,
+      to: "usagrishield02@gmail.com",
       replyTo: email,
       subject: subjectLine,
       html: htmlContent,
