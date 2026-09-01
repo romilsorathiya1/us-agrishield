@@ -61,7 +61,7 @@ export default function Home() {
             <div className="hero-card">
               <div className="hero-card-image">
                 <Image
-                  src="/products-showcase.jpeg"
+                  src="/products-showcase.png"
                   alt="US Agrishield agriculture products"
                   width={600}
                   height={450}
