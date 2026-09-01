@@ -104,9 +104,11 @@ export default function ProductDetailPage({ categorySlug }) {
                     <div className="pd-variant-header">
                       <span className="pd-variant-type-badge">{product.category}</span>
                       <h3 className="pd-variant-title">{product.name}</h3>
+                        { product.composition &&
                       <div className="pd-variant-tech-badge">
                         <span className="pd-tech-label">Technical Formulation:</span> {product.composition}
                       </div>
+                        }
                     </div>
 
                     <p className="pd-variant-summary">{product.summary}</p>

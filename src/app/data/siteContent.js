@@ -18,7 +18,7 @@ export const categories = [
       "Advanced fungicide solutions that protect crops from diseases and promote healthier plant growth.",
     image: "/Fungicides.jpeg",
     image2: "/Fungicides2.png",
-    products: ["US Defender", "US Champion", "US Champion Plus"],
+    products: ["US Defender", "Champion", "AZOD"],
   },
   {
     slug: "insecticides",
@@ -29,7 +29,7 @@ export const categories = [
       "Effective insecticide solutions that protect crops from harmful insects and improve crop productivity.",
     image: "/Insecticides.jpeg",
     image2: "/Insecticides2.png",
-    products: ["US Sniper", "US Marshal", "US Hanter", "US Fighter", "US Ravan", "US Guard"],
+    products: ["Sniper", "Marshal", "Hunter", "Fighter", "Ravan", "US Guard"],
   },
   {
     slug: "herbicides",
@@ -51,7 +51,7 @@ export const categories = [
       "Advanced plant growth regulators that support healthier growth, improved flowering, and higher yields.",
     image: "/PGR.jpeg",
     image2: "/PGR2.png",
-    products: ["US Booster", "US Power Plus", "US Extra Life", "US Silistic"],
+    products: ["US Booster", "US Power Plus", "Extra Life", "Silistic"],
   },
 ];
 
@@ -75,7 +75,7 @@ export const products = [
   },
   {
     slug: "fungicides",
-    name: "US Champion",
+    name: "Champion",
     category: "Fungicide",
     composition: "Azoxystrobin 11% + Tebuconazole 18.3% SC",
     image: "/productPhotos/champion.png",
@@ -91,7 +91,7 @@ export const products = [
   },
   {
     slug: "fungicides",
-    name: "US Champion Plus",
+    name: "AZOD",
     category: "Fungicide",
     composition: "Azoxystrobin 18.2% + Difenoconazole 11.4% SC",
     image: "/productPhotos/azod.png",
@@ -109,7 +109,7 @@ export const products = [
   // Insecticides
   {
     slug: "insecticides",
-    name: "US Sniper",
+    name: "Sniper",
     category: "Insecticide",
     composition: "Abamectin 1.9% EC",
     image: "/productPhotos/sniper.png",
@@ -125,7 +125,7 @@ export const products = [
   },
   {
     slug: "insecticides",
-    name: "US Marshal",
+    name: "Marshal",
     category: "Insecticide",
     composition: "Emamectin Benzoate 1.9% EC",
     image: "/productPhotos/marshal.png",
@@ -141,7 +141,7 @@ export const products = [
   },
   {
     slug: "insecticides",
-    name: "US Hanter",
+    name: "Hunter",
     category: "Insecticide",
     composition: "Diafenthiuron 47% + Bifenthrin 9.4% SC",
     image: "/productPhotos/hanter.png",
@@ -157,7 +157,7 @@ export const products = [
   },
   {
     slug: "insecticides",
-    name: "US Fighter",
+    name: "Fighter",
     category: "Insecticide",
     composition: "Azadirachtin 0.15% EC (1500 ppm)",
     image: "/productPhotos/fighter.png",
@@ -173,7 +173,7 @@ export const products = [
   },
   {
     slug: "insecticides",
-    name: "US Ravan",
+    name: "Ravan",
     category: "Insecticide",
     composition: "Azadirachtin 1% EC (10,000 PPM)",
     image: "/productPhotos/ravan.png",
@@ -239,9 +239,9 @@ export const products = [
   },
   {
     slug: "pgr",
-    name: "US Extra Life",
+    name: "Extra Life",
     category: "PGR / Bio-stimulant",
-    composition: "Plant & Root Booster",
+    // composition: "Plant & Root Booster",
     image: "/productPhotos/extraLife.png",
     dosage: "As recommended by crop advisor",
     pack: "Available pack sizes on request",
@@ -255,7 +255,7 @@ export const products = [
   },
   {
     slug: "pgr",
-    name: "US Silistic",
+    name: "Silistic",
     category: "Adjuvant",
     composition: "Silicone-based Agricultural Adjuvant",
     image: "/productPhotos/silistic.png",

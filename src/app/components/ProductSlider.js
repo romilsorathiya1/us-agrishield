@@ -2,54 +2,13 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
+import { products } from '../data/siteContent';
 
-const sliderItems = [
-  {
-    name: 'US Defender',
-    technicalName: 'Tebuconazole 25.9% EC',
-    image: '/productPhotos/defender.png',
-  },
-  {
-    name: 'US Champion',
-    technicalName: 'Azoxystrobin 11% + Tebuconazole 18.3% SC',
-    image: '/productPhotos/champion.png',
-  },
-  {
-    name: 'US Champion Plus',
-    technicalName: 'Azoxystrobin 18.2% + Difenoconazole 11.4% SC',
-    image: '/productPhotos/championPlus.png',
-  },
-  {
-    name: 'US Sniper',
-    technicalName: 'Abamectin 1.9% EC',
-    image: '/productPhotos/sniper.png',
-  },
-  {
-    name: 'US Marshal',
-    technicalName: 'Emamectin Benzoate 1.9% EC',
-    image: '/productPhotos/marshal.png',
-  },
-  {
-    name: 'US Fighter',
-    technicalName: 'Profenofos 40% + Cypermethrin 4% EC',
-    image: '/productPhotos/fighter.png',
-  },
-  {
-    name: 'US Booster',
-    technicalName: 'Paclobutrazol 40% SC',
-    image: '/productPhotos/booster.png',
-  },
-  {
-    name: 'US Power Plus',
-    technicalName: 'Gibberellic Acid (GA3)',
-    image: '/productPhotos/powerPlus.png',
-  },
-  {
-    name: 'US Titan',
-    technicalName: 'Quizalofop Ethyl 7.5% + Imazethapyr 15% EC',
-    image: '/productPhotos/titan.png',
-  },
-];
+const sliderItems = products.map((item) => ({
+  name: item.name,
+  technicalName: item.composition || item.category,
+  image: item.image,
+}));
 
 export default function ProductSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
